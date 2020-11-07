@@ -1,0 +1,14 @@
+package com.elucidator.dto;
+
+public class Person {
+	String name;
+	int age;
+	double high;
+	boolean flag;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,16 @@
+package com.elucidator.dto;
+
+public class Person {
+	String name;
+	int age;
+	double high;
+	boolean flag;
+	
+	public void eat(){
+		System.out.println("eat方法");
+	}
+	public void drive(){
+		System.out.println("开车的方法");
+	}
+
+}

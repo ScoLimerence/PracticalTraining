@@ -1,0 +1,14 @@
+INDEX VERSION 1.127+F:\practicalTraining\.metadata\.plugins\org.eclipse.jdt.core
+2605201221.index
+512171320.index
+1519794629.index
+4225336754.index
+3846751570.index
+2918913330.index
+2605758288.index
+2662814507.index
+3813116887.index
+1913480011.index
+948168288.index
+472317767.index
+350212081.index
