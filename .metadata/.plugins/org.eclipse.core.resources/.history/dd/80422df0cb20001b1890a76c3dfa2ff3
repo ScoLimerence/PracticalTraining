@@ -1,0 +1,78 @@
+package com.elucidator.test;
+
+/**
+ * 
+ * @author Administrator
+ *
+ *java中多态分为两大类：1、方法多态(方法的重写和重载) 2、对象多态(向上转型、向下转型（强转）)
+ *重写:发生在父类和子类，子类重写父类中的方法：所有都必须一致，方法体除外
+ *重载:发生类中的方法，方法名相同，参数个数、类型、返回值可以不同
+ *向上转型:关键在于实际使用的是哪个子类，并且被调用方法是否被子类重写，若是，则调用子类重写方法
+ *	主要用在参数统一化：一个类可接受所有子类实例
+ *向下转型:将父类对象变成子类对象，需要强转，
+ *	场景:父类想调用子类独有的方法,<先要子类向上转型，在才能向下转型>
+ *
+ *每个类都继承与Object类 都有默认无参构造方法
+ *super(); 调用直接父类的无参构造方法
+ *instanceof关键字 “包含”，主要用于判断子类是否属于父类
+ */
+public class StatusTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//参数统一
+		Father father = new Father();
+		System.out.println(father instanceof Father);
+		System.out.println(father instanceof son);
+		father.print();
+		father = new son();
+		father.print();//显示的是父类中的方法，但实际打印是子类中的方法
+		father = new daughter();
+		father.print();
+//		father.fuc();//向上转型后只能调用子类重写的方法和父类中的方法，却不能调用子类独有的方法
+		son boy =new son();
+		System.out.println(boy instanceof Father);		
+		daughter girl=(daughter) father;
+		girl.fuc();//向下转型，使父类扩展，得到子类中的方法
+		girl.print();//同时兼有子类重写的方法
+		System.out.println(girl instanceof Father);
+
+	}
+
+}
+class Father{
+	
+	public Father() {
+		super();//直接父类是Object
+		// TODO Auto-generated constructor stub
+	}
+
+	public void print(){
+		System.out.println("我是father");
+	}
+}
+class son extends Father{
+	
+	public son() {
+		super();//直接父类是Father
+		// TODO Auto-generated constructor stub
+	}
+
+	public void print(){
+		System.out.println("我是son");
+	}
+}
+class daughter extends Father{
+	
+	public daughter() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public void print(){
+		System.out.println("我是daugther");
+	}
+	public void fuc(){
+		System.out.println("daugther独有的方法");
+	}
+}

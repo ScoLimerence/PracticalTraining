@@ -1,0 +1,18 @@
+package com.elucidator.test;
+
+import java.util.*;
+
+public class ListTest {
+	
+	public static void main(String[] args) {
+		List<String> list=new ArrayList<>();
+		String strs="asdfggjf123852";
+		char[] chars=strs.toCharArray();
+		for(char ch:chars){
+			System.out.print(ch);
+			
+		}
+		list.add(strs);
+		System.out.println(list);
+	}	
+}

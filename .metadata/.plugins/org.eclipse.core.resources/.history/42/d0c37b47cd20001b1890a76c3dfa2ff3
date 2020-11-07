@@ -1,0 +1,5 @@
+package com.elucidator.jeko;
+
+public interface ChuShi {
+
+}

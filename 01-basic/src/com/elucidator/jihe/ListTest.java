@@ -1,0 +1,44 @@
+package com.elucidator.jihe;
+
+import java.util.*;
+/**
+ * 不唯一：List
+ * 	要安全吗?
+ * 		是：Vector
+ * 		否：ArrayList或者LinkedList
+ * 			查询多：ArrayList
+ * 			增删多：LinkedList
+ * 如果你知道是List，但是不知道是哪个List，就用ArrayList。
+ * @author Administrator
+ */
+
+public class ListTest {
+	
+	public static void main(String[] args) {
+//		List 有序,可重复,本身是接口,同时继承Connection接口
+//		ArrayList、Vector、LinkedList都是List的实现类
+		List<String> list=new ArrayList<>();
+		/*优点: 底层数据结构是数组，查询快，增删慢。
+		缺点: 线程不安全，效率高*/
+		List<String> vector = new Vector<>();
+		/*优点: 底层数据结构是数组，查询快，增删慢。
+		缺点: 线程安全，效率低*/
+		List<String> linkedList = new LinkedList<>();
+		/*优点: 底层数据结构是链表，查询慢，增删快。
+		缺点: 线程不安全，效率高*/
+		String strs="asdfggjf123852";
+		String str;
+		char[] chars=strs.toCharArray();
+		for(char ch:chars){
+			str=String.valueOf(ch);
+			System.out.print(ch);
+			list.add(str);
+			vector.add(str);
+			linkedList.add(str);
+		}
+		System.out.println();
+		System.out.println(list);
+		System.out.println(vector);
+		System.out.println(linkedList);
+	}	
+}

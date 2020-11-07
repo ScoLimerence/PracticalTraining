@@ -1,0 +1,26 @@
+package com.elucidator.test;
+
+import java.util.*;
+
+public class ListTest {
+	
+	public static void main(String[] args) {
+		List<String> list=new ArrayList<>();
+		Vector<String> vector = new Vector<>();
+		LinkedList<String> linkedList = new LinkedList<>();
+		String strs="asdfggjf123852";
+		String str;
+		char[] chars=strs.toCharArray();
+		for(char ch:chars){
+			str=String.valueOf(ch);
+			System.out.print(ch);
+			list.add(str);
+			vector.add(str);
+			linkedList.add(str);
+		}
+		System.out.println();
+		System.out.println(list);
+		System.out.println(vector);
+		System.out.println(linkedList);
+	}	
+}
